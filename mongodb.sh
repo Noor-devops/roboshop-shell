@@ -11,6 +11,7 @@ VALIDATE(){
         echo " $2 is..... FAILURE"
     else
         echo " $2 is..... SUCCESS"
+    fi
 }
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "Adding Mongo repo"
