@@ -28,7 +28,7 @@ do
         )
         R53_RECORD="$instance.$DOMAIN_NAME"
     fi
-    ###### Updating R53 Record ########
+    ###### Updating R53 Record #########
     aws route53 change-resource-record-sets \
     --hosted-zone-id $ZONE_ID \
     --change-batch '
