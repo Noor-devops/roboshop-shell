@@ -7,7 +7,7 @@ for instance in $@
 do
     echo "Launching instance: $instance"
     INSTANCE_ID=$(aws ec2 run-instances \
-        --image-id $AMI_ID \
+        --image-id ami-0220d79f3f480ecf5 \
         --instance-type t3.micro \
         --security-groups "roboshop-common" "expense-$instance" \
         --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=expense-$instance}]" \
