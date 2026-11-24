@@ -58,14 +58,14 @@ VALIDATE $? "Downloaded and extracted catalogue code"
 npm install  &>>$LOGS_FILE
 VALIDATE $? "Installing dependencies"
 
-# cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
-# VALIDATE $? "Created systemctl service"
+cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
+VALIDATE $? "Created systemctl service"
 
-# cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
-# VALIDATE $? "Added Mongo repo" 
+cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
+VALIDATE $? "Added Mongo repo" 
 
-# dnf install mongodb-mongosh -y &>>$LOGS_FILE
-# VALIDATE $? "Installed MongoDB client"
+dnf install mongodb-mongosh -y &>>$LOGS_FILE
+VALIDATE $? "Installed MongoDB client"
 
 # INDEX=$(mongosh --host mongodb.daws90s.shop --eval 'db.getMongo().getDBNames().indexOf("catalogue")')
 
